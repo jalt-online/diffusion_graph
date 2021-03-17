@@ -11,13 +11,13 @@ class Model():
         self.log = []                       # log of changes
         self.clock = 0                  # step counter
 
-        self.log += [(self.matrix, self.clock)]
+        self.log += [(np.copy(self.matrix), self.clock)]
 
     def reset(self):
         self.matrix = np.random.rand(self.dim,self.dim)
         self.clock = 0
         self.log = []
-        self.log += [(self.matrix, self.clock)]
+        self.log += [(np.copy(self.matrix), self.clock)]
         return self
 
     def set_evolution(self, fn):
