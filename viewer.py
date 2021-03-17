@@ -155,9 +155,10 @@ class Viewer():
         (t0, t1) = interval if interval is not None else (0, len(self.log))
         for t in [t for (matrix, t) in self.log if t >= t0 and t <= t1]:
             for i in range(len(functions)):
-                fi = functions[i]
+                fi = functions[i][0]
                 series[i] += [fi(self.graphs[t])]
         
         for i in range(len(functions)):
-            plt.plot(series[i])
+            plt.plot(series[i], label=functions[i][1])
+            plt.legend()
         show()

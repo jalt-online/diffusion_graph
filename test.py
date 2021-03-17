@@ -22,9 +22,9 @@ def shortest_path_wrapper(G):
 
 # plot some networkx functions
 V.plot([
-    nx.number_connected_components, 
-    nx.average_clustering, 
-    shortest_path_wrapper
+    (nx.number_connected_components, "Connected components"),
+    (nx.average_clustering, "Average clustering"),
+    (shortest_path_wrapper, "Average shortest path")
     ])
 
 # play some nice animations
