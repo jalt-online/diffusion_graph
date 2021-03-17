@@ -64,9 +64,6 @@ class Model():
         
         self.log += [(np.copy(self.matrix), self.clock)]
 
-        #for (matrix, t) in self.log:
-            #if not np.all(matrix>=0): print("NEGATIVES")
-            #if not np.all(matrix<=1): print("TOO BIGS")
         return self
 
 
