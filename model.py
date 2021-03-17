@@ -1,4 +1,5 @@
 import numpy as np
+import networkx as nx
 
 class Model():
     def __init__(self, n, debug = False):
@@ -66,4 +67,16 @@ class Model():
 
         return self
 
+
+    def matrix_at(self, t):
+        if t < len(self.log): return self.log[t][0]
+        else: return [[]]
+
+    def edges_at(self, t):
+        if t < len(self.log): return nx.from_numpy_array(np.where(self.log[t][0]==1,1,0))
+        else: return [[]]
+
+    def weights_at(self, t):
+        if t < len(self.log): return nx.from_numpy_array(self.log[t][0])
+        else: return [[]]
 

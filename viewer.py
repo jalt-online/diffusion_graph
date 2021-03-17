@@ -148,7 +148,6 @@ class Viewer():
 
 
 
-
     def plot(self, functions, interval=None):
         # functions should be networkx functions of G
         series = [[] for f in functions] 
